@@ -22,6 +22,10 @@ function checkTime(i) {
     return i;
 }
 
+// Llamar a la función para actualizar el reloj
+updateClock();
+
+
 // Variables para el temporizador
 var timer;
 var secondsLeft;
@@ -54,13 +58,36 @@ function resetTimer() {
 function updateTimer() {
     document.getElementById("timer").innerHTML = secondsLeft + " segundos";
     secondsLeft--;
+
     if (secondsLeft < 0) {
         clearInterval(timer);
         alert("¡Tiempo terminado!");
+
+        // Reproducir efecto de sonido
+        var audio = new Audio("/elements/Palo de metal callendose sonido.mp3");
+        audio.play();
     }
 }
 
+
+// Función para seleccionar un nombre aleatorio de la lista de nombres ingresados
 // Función para seleccionar un nombre aleatorio de la lista de nombres ingresados
 function pickRandomName() {
     var names = document.getElementById("names").value.split(",");
     if (names.length < 2) {
+        alert("Ingrese al menos dos nombres separados por comas.");
+        return;
+    }
+    var randomIndex = Math.floor(Math.random() * names.length);
+    var randomName = names[randomIndex].trim();
+    document.getElementById("result").innerHTML = randomName;
+}
+
+// Función para activar/desactivar el modo oscuro
+function toggleDarkMode() {
+    var body = document.querySelector("body");
+    var darkModeButton = document.getElementById("dark-mode-button");
+
+    body.classList.toggle("dark-mode");
+    darkModeButton.innerText = body.classList.contains("dark-mode") ? "Modo Claro" : "Modo Oscuro";
+}

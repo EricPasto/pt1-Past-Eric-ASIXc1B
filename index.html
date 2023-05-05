@@ -4,11 +4,16 @@
     <link rel="stylesheet" href="estilo.css">
 	<title>Reloj y Selección Aleatoria de Nombres</title>
 </head>
+<audio id="audio">
+	<source src="/elements/Palo de metal callendose sonido.mp3" type="audio/mpeg">
+  </audio>
+  
 <body>
-	<h1>Reloj y Selección Aleatoria de Nombres</h1>
+	<nav style="background-color: orange;">
+		<h1>Reloj y Selección Aleatoria de Nombres</h1>
+	</nav>
 
-	<div id="clock">12:00:00</div>
-
+	<div id="clock"></div>
 
 	<button onclick="startTimer()">Iniciar Temporizador</button>
 	<button onclick="stopTimer()">Detener Temporizador</button>
@@ -19,6 +24,11 @@
 	<input type="text" id="names"><br>
 	<button onclick="pickRandomName()">Seleccionar Aleatoriamente</button>
 	<div id="result"></div>
+
+	<button onclick="toggleDarkMode()">Modo oscuro</button>
+
 	<script src="scripts.js"></script>
 </body>
 </html>
+
+

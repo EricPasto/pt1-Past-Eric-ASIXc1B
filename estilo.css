@@ -15,7 +15,7 @@ h1 {
     font-size: 3em;
     margin: 20px;
     text-align: center;
-    font-family: 'Open Sans', sans-serif; /* Fuente distinta */
+    font-family: 'MiFuente', sans-serif;
 }
 
 
@@ -50,3 +50,43 @@ input[type=text] {
     text-align: center;
     font-weight: bold;
 }
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+body {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial, sans-serif;
+}
+
+#dark-mode-button {
+	margin-top: 20px;
+	background-color: #000000;
+	color: #FFFFFF;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.dark-mode {
+	background-color: #1A1A1A;
+	color: #FFFFFF;
+}
+
+#clock, #timer, #result {
+	margin-top: 20px;
+	font-size: 36px;
+    font-family: 'MiFuente', sans-serif;
+}
+
+#result {
+	font-weight: bold;
+}
+/*fuente para el reloj*/
+@font-face {
+    font-family: 'MiFuente';
+    src: url('/ds-digital/DS-DIGII.TTF') format('truetype');
+}
+
