@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="estilo.css">
+	<title>Reloj y Selección Aleatoria de Nombres</title>
+</head>
+<body>
+	<h1>Reloj y Selección Aleatoria de Nombres</h1>
 
+	<div id="clock">12:00:00</div>
+
+
+	<button onclick="startTimer()">Iniciar Temporizador</button>
+	<button onclick="stopTimer()">Detener Temporizador</button>
+	<button onclick="resetTimer()">Restablecer Temporizador</button>
+	<div id="timer"></div>
+
+	<label for="names">Ingrese una lista de nombres separados por comas:</label><br>
+	<input type="text" id="names"><br>
+	<button onclick="pickRandomName()">Seleccionar Aleatoriamente</button>
+	<div id="result"></div>
+	<script src="scripts.js"></script>
+</body>
+</html>
