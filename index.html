@@ -2,34 +2,36 @@
 <html>
 <head>
     <link rel="stylesheet" href="estilo.css">
-	<title>Reloj y Selección Aleatoria de Nombres</title>
+    <title>Reloj</title>
 </head>
 <audio id="audio">
-	<source src="/elements/Palo de metal callendose sonido.mp3" type="audio/mpeg">
-  </audio>
-  
+    <source src="/elements/Palo de metal callendose sonido.mp3" type="audio/mpeg">
+</audio>
+
 <body>
-	<nav style="background-color: orange;">
-		<h1>Reloj y Selección Aleatoria de Nombres</h1>
-	</nav>
+    <nav style="background-color: orange;">
+        <h1>Reloj</h1>
+    </nav>
 
-	<div id="clock"></div>
-	<h2>Temporizador</h2>
-	<button onclick="startTimer()">Iniciar Temporizador</button>
-	<button onclick="stopTimer()">Detener Temporizador</button>
-	<button onclick="resetTimer()">Restablecer Temporizador</button>
-	<div id="timer"></div>
+    <div id="clock"></div>
+    <h2>Temporizador</h2>
+    <button onclick="startTimer()">Iniciar Temporizador</button>
+    <button onclick="stopTimer()">Detener Temporizador</button>
+    <button onclick="resetTimer()">Restablecer Temporizador</button>
+    <div id="timer"></div>
 
-	<h2>Ruleta</h2>
-	<label for="names">Ingrese una lista de nombres separados por comas:</label><br>
-	<input type="text" id="names"><br>
-	<button onclick="pickRandomName()">Seleccionar Aleatoriamente</button>
-	<div id="result"></div>
 
-	<button id="dark-mode-button" onclick="toggleDarkMode()">Modo oscuro</button>
+    <button id="dark-mode-button" onclick="toggleDarkMode()">
+		<img src="elements/modo-oscuro.png"">
+	</button>
 
-	<script src="scripts.js"></script>
+	<a href="ruleta.html"><button id="ruleta-button">Ir a Ruleta</button></a>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
+
+
+
 
 

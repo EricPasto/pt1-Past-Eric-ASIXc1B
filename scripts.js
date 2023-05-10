@@ -84,8 +84,9 @@ function pickRandomName() {
 // Función para activar/desactivar el modo oscuro
 function toggleDarkMode() {
     var body = document.querySelector("body");
-    var darkModeButton = document.getElementById("dark-mode-button");
-
+    var darkModeButton = document.getElementById("dark-mode-button"); 
     body.classList.toggle("dark-mode");
-    darkModeButton.innerText = body.classList.contains("dark-mode") ? "Modo Claro" : "Modo Oscuro";
+    darkModeButton.src = body.classList.contains("dark-mode") ? "elements/modo-oscuro.png" : "elements/modo claro.png";
 }
+
+  

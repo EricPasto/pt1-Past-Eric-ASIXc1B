@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="estilo.css">
+        <title>Reloj y Ruleta</title>
+    </head>
+    <nav style="background-color: orange;">
+        <h1>Ruleta</h1>
+    </nav>
+<body>
+	<div class="contenedor">
+		<div class="concursantes">
+			<canvas id="idcanvas" width="600" height="600"></canvas>
+			<br>
+			<button onclick="sortear()"><span id="idestado">Sortear</span></button>
+			<div class="mark-winner"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		const array_concursantes=
+		[
+            'arnau.amat.7e5@itb.cat'
+            ,'luis.arteaga.7e3@itb.cat'
+            ,'hector.artigas.7e4@itb.cat'
+            ,'joan.cabrera.7e6@itb.cat'
+            ,'oriol.canellas.7e3@itb.cat'
+            ,'narcis.carol.7e5@itb.cat'
+            ,'aleix.dediego.7e4@itb.cat'
+            ,'enrique.delrey.7e6@itb.cat'
+            ,'quim.delgado.7e5@itb.cat'
+            ,'erik.doral.7e4@itb.cat'
+            ,'jalal.elmasnaoui.7E6@itb.cat'
+            ,'anuar.ezzamouni.7e3@itb.cat'
+            ,'arnau.fernandez.7e4@itb.cat'
+            ,'antonio.flores.7e3@itb.cat'
+            ,'simon.garcia.7e3@itb.cat'
+            ,'mario.gomez.7e4@itb.cat'
+            ,'joel.guerrero.7e6@itb.cat'
+            ,'matvei.karikh.7e6@itb.cat'
+            ,'kevin.navarrete.7e4@itb.cat'
+            ,'erik.nunyez.7e4@itb.cat'
+            ,'marc.olivares.7e5@itb.cat'
+            ,'alfonso.ortiz.7e5@itb.cat'
+            ,'eric.pasto.7e4@itb.cat'
+            ,'marcos.pastor.7e5@itb.cat'
+            ,'aaron.pinya.7e6@itb.cat'
+            ,'guillem.sanchez.7e4@itb.cat'
+            ,'oleguer.serrat.7e6@itb.cat'
+            ,'baljinder.singh.7e4@itb.cat'
+            ,'guillem.teixido.7e6@itb.cat'
+            ,'matteo.vilchez.7e6@itb.cat'
+		];
+
+		let canvas=document.getElementById("idcanvas");
+		let context=canvas.getContext("2d");
+		let center=canvas.width/2;
+
+		context.beginPath();
+		context.moveTo(center,center);
+		context.arc(center,center,center,0, 2*Math.PI);
+		context.lineTo(center,center);
+		context.fillStyle ='#33333333';
+		context.fill();
+
+		context.beginPath();
+		context.moveTo(center,center);
+		context.arc(center,center,center-10,0, 2*Math.PI);
+		context.lineTo(center,center);
+		context.fillStyle ='black';
+		context.fill();
+
+		for (var i = 0; i < array_concursantes.length; i++) {
+			context.beginPath();
+			context.moveTo(center,center);
+			context.arc(center,center,center-20,i*2*Math.PI/array_concursantes.length, (i+1)*2*Math.PI/array_concursantes.length);
+			context.lineTo(center,center);
+			context.fillStyle =random_color();
+			context.fill();
+
+			context.save();
+			context.translate(center, center);
+			context.rotate(3*2*Math.PI/(5*array_concursantes.length)+i*2*Math.PI/array_concursantes.length);
+			context.translate(-center, -center);
+			context.font = "13px Comic Sans MS";
+			context.textAlign = "right";
+			context.fillStyle = "white";
+			context.fillText(array_concursantes[i], canvas.width-30, center);
+			context.restore();
+		}
+
+		let pos_ini=0;
+		let clic=0;
+		let movement;
+		function sortear(){
+			if (clic==0) {
+				let canvas=document.getElementById("idcanvas");
+				movement=setInterval(function(){
+					pos_ini+=10;
+					canvas.style.transform='rotate('+pos_ini+'deg)';
+				},10);
+				clic=1;
+				document.getElementById("idestado").innerHTML="Detener";
+			}else{
+				clearInterval(movement);
+				clic=0;
+				document.getElementById("idestado").innerHTML="Sortear";
+			}
+		}
+
+		function random_color(){
+			let ar_digit=['2','3','4','5','6','7','8','9'];
+			let color='';
+			let i=0;
+			while(i<6){
+				let pos=Math.round(Math.random()*(ar_digit.length-1));
+				color=color+''+ar_digit[pos];
+				i++;
+			}
+			return '#'+color;
+		}
+	</script>
+    <script src="scripts.js"></script>
+    <a href="index.html"><button id="ruleta-button">Ir a Reloj</button></a>
+</body>
+<button id="dark-mode-button" onclick="toggleDarkMode()">
+    <img src="elements/modo-oscuro.png"">
+</button>
+</html>
