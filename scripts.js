@@ -69,8 +69,6 @@ function updateTimer() {
     }
 }
 
-
-// Función para seleccionar un nombre aleatorio de la lista de nombres ingresados
 // Función para seleccionar un nombre aleatorio de la lista de nombres ingresados
 function pickRandomName() {
     var names = document.getElementById("names").value.split(",");
