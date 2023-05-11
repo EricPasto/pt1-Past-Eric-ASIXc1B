@@ -9,6 +9,10 @@ h1 {
     text-align: center;
     color: #333;
 }
+h2 {
+    text-align: center;
+    color: #333;
+}
 
 /* Estilo para el reloj */
 #clock {
@@ -21,6 +25,7 @@ h1 {
 
 /* Estilo para los botones */
 button {
+	text-align: center;
     padding: 10px;
     margin: 10px;
     background-color: #333;
@@ -79,6 +84,7 @@ body {
 }
 
 #clock, #timer, #result {
+	text-align: center;
 	margin-top: 20px;
 	font-size: 36px;
     font-family: 'MiFuente', sans-serif;
@@ -144,7 +150,6 @@ button{
 	z-index: 10;
 	box-shadow: 0 0 3px #33333399;
 }
-  
 
 
 
